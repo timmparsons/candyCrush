@@ -46,26 +46,26 @@ document.addEventListener('DOMContentLoaded', () => {
   function dragStart() {
     colorBeingDragged = this.style.backgroundImage;
     squareIdBeingDragged = parseInt(this.id)
-    console.log(colorBeingDragged )
-    console.log(this.id, 'dragstart')
+    // console.log(colorBeingDragged )
+    // console.log(this.id, 'dragstart')
   }
 
   function dragOver(e) {
     e.preventDefault();
-    console.log(this.id, 'dragover')
+    //console.log(this.id, 'dragover')
   }
 
   function dragEnter(e) {
     e.preventDefault();
-    console.log(this.id, 'dragstart')
+    //console.log(this.id, 'dragstart')
   }
 
   function dragLeave() {
-    console.log(this.id, 'dragleave')
+    //console.log(this.id, 'dragleave')
   }
 
   function dragDrop() {
-    console.log(this.id, 'dragdrop')
+    //console.log(this.id, 'dragdrop')
     colorBeingReplaced = this.style.backgroundImage;
     squareIdBeingReplaced = parseInt(this.id);
     this.style.backgroundImage = colorBeingDragged;
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function dragEnd() {
-    console.log(this.id, 'dragend')
+    //console.log(this.id, 'dragend')
 
     let validMoves = [squareIdBeingDragged -  1, 
                       squareIdBeingDragged - width,
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if(rowOfFour.every(index => squares[index].style.backgroundImage === decidedColor && !isBlank)) {
         score += 4;
-        scoreDisplay.innerHTML = score;
+        //scoreDisplay.innerHTML = score;
         rowOfFour.forEach(index => {
           squares[index].style.backgroundImage = ''
         })
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if(columnOfFour.every(index => squares[index].style.backgroundImage === decidedColor && !isBlank)) {
         score += 4;
-        scoreDisplay.innerHTML = score;
+        //scoreDisplay.innerHTML = score;
         columnOfFour.forEach(index => {
           squares[index].style.backgroundImage = ''
         })
@@ -155,7 +155,7 @@ if(notValid.includes(i)) continue
 
       if(rowOfThree.every(index => squares[index].style.backgroundImage === decidedColor && !isBlank)) {
         score += 3;
-        scoreDisplay.innerHTML = score;
+        //scoreDisplay.innerHTML = score;
         rowOfThree.forEach(index => {
           squares[index].style.backgroundImage = ''
         })
@@ -172,7 +172,7 @@ if(notValid.includes(i)) continue
 
       if(columnOfThree.every(index => squares[index].style.backgroundImage === decidedColor && !isBlank)) {
         score += 3;
-        scoreDisplay.innerHTML = score;
+        //scoreDisplay.innerHTML = score;
         columnOfThree.forEach(index => {
           squares[index].style.backgroundImage = ''
         })
